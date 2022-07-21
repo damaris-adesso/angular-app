@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerComponent implements OnInit {
   sellers: string[];
+  hide: boolean;
 
   constructor() {
     this.sellers = ['BestBuy', 'Apple', 'Amazon'];
+    this.hide = true;
   }
 
   getSellers(): string[] {
     return this.sellers;
+  }
+
+  toggle() {
+    this.hide = !this.hide;
   }
 
   ngOnInit(): void {}

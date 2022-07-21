@@ -1,31 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 
+export interface Product {
+  id: string;
+  name: string;
+}
+
+
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-  id: number;
-  name: string;
-  price: number;
+
+  products: Product[];
 
   constructor() {
-    this.id = 1;
-    this.name = 'Mac Book Pro';
-    this.price = 1300;
+    this.products = [
+      { id: '1', name: 'Mac Book Pro' },
+      { id: '2', name: 'Iphone' },
+    ] as Product[];
   }
 
-  public getId(): number {
-    return this.id;
-  }
-
-  public getName(): string {
-    return this.name;
-  }
-
-  public getPrice(): number {
-    return this.price;
+  public getProducts() {
+    return this.products;
   }
 
   ngOnInit(): void {}
